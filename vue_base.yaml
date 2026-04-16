@@ -57,9 +57,9 @@ packages:
 esphome:
   name: ${name}
   friendly_name: ${friendly_name}
-  on_boot: #beeps the buzzer
-    then:
-      - rtttl.play: 'two_short:d=4,o=5,b=100:16e6,16e6'
+#  on_boot: #beeps the buzzer
+#    then:
+#      - rtttl.play: 'two_short:d=4,o=5,b=100:16e6,16e6'
   
 esp32:
   board: esp32dev
@@ -67,14 +67,14 @@ esp32:
     type: esp-idf
     version: recommended
 
-api:
-  services:
-    - service: play_rtttl
-      variables:
-        song_str: string
-      then:
-        - rtttl.play:
-            rtttl: !lambda 'return song_str;'
+#api:
+#  services:
+#    - service: play_rtttl
+#      variables:
+#        song_str: string
+#      then:
+#        - rtttl.play:
+#            rtttl: !lambda 'return song_str;'
 
 logger:
   logs:
@@ -88,25 +88,25 @@ preferences:
   # sensors below.
   flash_write_interval: "48h"
 
-output:
-  - platform: ledc
-    pin:
-      number: GPIO12
-      ignore_strapping_warning: true
-    id: buzzer
-  - platform: gpio
-    pin: GPIO27
-    id: buzzer_gnd
+#output:
+#  - platform: ledc
+#    pin:
+#      number: GPIO12
+#      ignore_strapping_warning: true
+#    id: buzzer
+#  - platform: gpio
+#    pin: GPIO27
+#    id: buzzer_gnd
 
-rtttl:
-  output: buzzer
-  on_finished_playback:
-    - logger.log: 'Song ended!'
+#rtttl:
+#  output: buzzer
+#  on_finished_playback:
+#    - logger.log: 'Song ended!'
 
-status_led:
-  pin:
-    number: 23
-    inverted: True
+#status_led:
+#  pin:
+#    number: 23
+#    inverted: True
 
 i2c:
   sda: 
