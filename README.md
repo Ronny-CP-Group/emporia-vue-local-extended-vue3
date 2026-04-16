@@ -35,8 +35,8 @@ And from those we calculate extended measurements using lambdas on the ESP32
 The configuration relies mostly on substitutions. All options are needed, and if you mess something up it most likely will not compile.
 ```yaml
 substitutions:
-  name: em02
-  friendly_name: EM02
+  name: esp32-emporia-vue-v3
+  friendly_name: vue3
 
   vue_variant: vue3  # Can be either vue2 or vue3, this only effects Phase A and C current measurements on the vue3
 
