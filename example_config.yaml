@@ -41,8 +41,6 @@ substitutions:
   ct_15: { disable: "false", backfeed: "false", phase: a  }
   ct_16: { disable: "false", backfeed: "false", phase: b  }
 
-
-
 packages:
   emporia_vue_extended:
     url: https://github.com/Ronny-CP-Group/emporia-vue-local-extended-vue3
@@ -52,27 +50,22 @@ packages:
 ##################################################################
 api:
   encryption:
-    key: MPX7A7mLhl9cHbVeBws9wJsClCNkuPW0OAgHTj5U/6f=   # generate your own key here https://esphome.io/components/api/#configuration-variables
+    key: !secret api_encryption_key
 ##################################################################
-
 logger:
-
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-  ap:
-    ssid: "${friendly_name} Fallback"
-    password: !secret fallback_password
-
-captive_portal:
-
+##################################################################
+# Network 
+packages:
+# LAN (only vue3)
+  - !include network/vue3_ethernet.yaml
+# Wifi
+#  - !include network/vue3_wifi.yaml
+##################################################################
 ota:
   - platform: esphome
     password: !secret ota_password
-
-
+##################################################################
 time:
-####################
   - platform: sntp
     id: my_time
     servers:
