@@ -1,6 +1,6 @@
 
 external_components:
-  - source: github://emporia-vue-local/esphome@vue3
+  - source: github://digiblur/esphome-vue3@dev
     components:
       - emporia_vue
       
