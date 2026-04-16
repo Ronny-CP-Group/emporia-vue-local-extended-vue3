@@ -45,7 +45,7 @@ substitutions:
 
 packages:
   emporia_vue_extended:
-    url: https://github.com/Legot/emporia-vue-local-extended
+    url: https://github.com/Ronny-CP-Group/emporia-vue-local-extended-vue3
     ref: main
     files: [vue_base.yaml]
 
