@@ -38,7 +38,7 @@ substitutions:
   name: em02
   friendly_name: EM02
 
-  vue_variant: vue2  # Can be either vue2 or vue3, this only effects Phase A and C current measurements on the vue3
+  vue_variant: vue3  # Can be either vue2 or vue3, this only effects Phase A and C current measurements on the vue3
 
   phase_a_voltage_calibration: 0.02164686998
   phase_b_voltage_calibration: 0.02276118
@@ -47,8 +47,8 @@ substitutions:
   # To calculate new calibration value use the formula <in-use calibration value> * <accurate voltage> / <reporting voltage>
 
   # These set the wire colors the for voltage/phase measurements
-  red_wire: phase_a
-  black_wire: phase_b
+  black_wire: phase_a
+  red_wire: phase_b
   blue_wire: phase_c
 
   sensor_update_rate: 500ms  # minimum is 240ms (limited by the Atmega)
